@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import DepartmentList from './DepartmentList';
 
 class DepartmentPage extends React.Component {
 
-  state = { departments: [] }
+  state = { departments: [], loaded: false }
+  
+  setLoaded = () => {
+    this.setState({ loaded: true })
+  }
 
   componentDidMount(){
-    axios.get("api/courses")
+    axios.get(`/api/departments`)
     .then( res => {
-      this.setState({ courses: res.data })
+      this.setState({ departments: res.data })
+      this.setLoaded()
     })
     .catch ( err => {
       console.log(err)
@@ -16,17 +23,24 @@ class DepartmentPage extends React.Component {
   }
 
   render() {
+    const { loaded } = this.state
+    const {departments} = this.state
+    if(loaded)
     return (
       <>
-        <h1>This is the department landing page</h1>
-        <h3>Things to add:</h3>
+        <Link to={{pathname: '/'}}>Home</Link>
+        
+        <h1>All Departments</h1>
         <ul>
-          <li>api calls</li>
-          <li>Header?</li>
-          <li>list of departments</li>
+        {departments.map ( department => <DepartmentList key={department.id} {...department} />)}
         </ul>
       </>
     )
+
+    else
+      return(
+        <h1>Loading...</h1>
+      )
   }
 }
  

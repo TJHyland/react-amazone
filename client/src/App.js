@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Footer from './components/shared/Footer';
 import DepartmentsPage from './components/department/DepartmentsPage';
+import DepartmentShow from './components/department/DepartmentShow';
 
 const App = () => (
   <Fragment>
@@ -10,6 +11,7 @@ const App = () => (
     <Switch>
     <Route exact path="/" component={Home} />
     <Route exact path="/DepartmentsPage" component={DepartmentsPage} />
+    <Route exact path="/Department/:id" component={DepartmentShow} />
     </Switch>
 
   </div>
