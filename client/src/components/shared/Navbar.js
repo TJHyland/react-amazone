@@ -41,8 +41,6 @@ const Navbar = () => (
         <Menu.Item position='right' as={ Link } name='login' to='/login'>
           Login/Logout
         </Menu.Item>
-
-        
       </Container>
     </Menu>
   </div>
