@@ -29,7 +29,7 @@ class Api::DepartmentsController < ApplicationController
 
   def show
     @department = Department.find(params[:id])
-    rend json: @department.products
+    render json: @department.products
   end
 
   private
