@@ -20,6 +20,7 @@ const App = () => (
   <div>
     <FetchUser>
       <Switch>
+
         <ProtectedRoute exact path="/" component={Home} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/DepartmentForm' component={DepartmentForm} />
@@ -29,6 +30,7 @@ const App = () => (
         <Route exact path="/Department/:id" component={DepartmentShow} />
         <Route exact path="/Product/:id" component={ProductShow} />
         <Route component={NoMatch} />
+
      </Switch>
     </FetchUser>
 

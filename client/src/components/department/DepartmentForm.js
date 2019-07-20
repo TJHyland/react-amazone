@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Form, Segment, Header, } from 'semantic-ui-react';
 import { CrudConsumer } from '../../providers/CrudProvider';
 
+
 class DepartmentForm extends React.Component {
   state = { title: ''}
 
@@ -29,7 +30,8 @@ class DepartmentForm extends React.Component {
 
 
   render() {
-    const { title } = this.state
+    const { title} = this.state
+
   
     return(
      
@@ -60,9 +62,11 @@ class DepartmentForm extends React.Component {
 export default class ConnectedDepartmentForm extends Component {
   render() {
     return (
+
       <CrudConsumer>
         { department => <DepartmentForm { ...this.props} department={department} />}
       </CrudConsumer>
+
     )
   }
 }

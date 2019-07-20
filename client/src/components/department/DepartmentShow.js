@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ProductList from '../product/ProductList';
+import ProductHero from '../hero/ProductHero'
 import { Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { CrudConsumer } from '../../providers/CrudProvider';
+
 
 class DepartmentShow extends React.Component {
 
@@ -26,9 +28,11 @@ class DepartmentShow extends React.Component {
 
     return (
       <>
-      <h1>Individual department page for { title }</h1>
+      <ProductHero />
 
-      <h1>All Products</h1>
+      <h1 style={{
+        fontSize: '4em',
+      }}>{title}</h1>
       <ul>
         {
           products.map( product => <ProductList key={product.id} {...product} /> )
