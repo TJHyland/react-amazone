@@ -1,10 +1,11 @@
-import react, { Component } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
-const CrudProvider = React.createContext();
+const CrudContext = React.createContext();
+
 export const CrudConsumer = CrudContext.Consumer;
 
-export class CrudConsumer extends Component {
+export class CrudProvider extends Component {
 
   state = { departments: [], products: [] }
 
@@ -80,7 +81,7 @@ export class CrudConsumer extends Component {
           return res.data
           return c
       })
-      this.setState({ lesson })
+      this.setState({ product })
       window.location.href = '/DepartmentsPage'
     })
   }

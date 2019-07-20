@@ -3,8 +3,10 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import DepartmentList from './DepartmentList';
 import DepartmentHero from '../hero/DepartmentHero'
+import { CrudConsumer } from '../../providers/CrudProvider';
 
-class DepartmentPage extends React.Component {
+
+class DepartmentsPage extends React.Component {
 
   state = { departments: [], loaded: false }
   
@@ -48,4 +50,12 @@ class DepartmentPage extends React.Component {
   }
 }
  
-export default DepartmentPage;
+export default class ConnectedDepartmenstPage extends Component {
+  render() {
+    return (
+      <CrudConsumer>
+        { department => <DepartmentsPage { ...this.props} department={department} />}
+      </CrudConsumer>
+    )
+  }
+}
