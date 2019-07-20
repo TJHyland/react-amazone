@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class Home extends Component {
 
-  render(){
+  render() {
     return(
       <>
       <h1>This is the home page</h1>
@@ -12,6 +13,7 @@ class Home extends Component {
         <li>Departments</li>
         <li>Users?</li>
       </ul>
+      <Link to={{pathname: '/DepartmentsPage', state: {} }}>Departments</Link>
       </>
     )
   }
