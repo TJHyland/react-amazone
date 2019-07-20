@@ -29,11 +29,12 @@ class Api::DepartmentsController < ApplicationController
 
   def show
     @department = Department.find(params[:id])
-    rend json: @department.products
+    render json: @department.products
   end
 
   private
 
   def department_params
     params.require(:department).permit(:title)
+  end
 end
