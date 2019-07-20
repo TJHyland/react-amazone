@@ -18,18 +18,17 @@ const App = () => (
   <div>
     <FetchUser>
       <Switch>
-       <Route exact path="/" component={Home} />
+       <ProtectedRoute exact path="/" component={Home} />
        <Route exact path='/login' component={Login} />
        <Route exact path='/register' component={Register} />
        <Route component={NoMatch} />
-      </Switch>
-    </FetchUser>
-    <Switch>
-    <Route exact path="/" component={Home} />
+
     <Route exact path="/DepartmentsPage" component={DepartmentsPage} />
     <Route exact path="/Department/:id" component={DepartmentShow} />
     <Route exact path="/Product/:id" component={ProductShow} />
-    </Switch>
+
+     </Switch>
+    </FetchUser>
 
   </div>
   <Footer />

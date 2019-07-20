@@ -6,8 +6,11 @@ import {
   Item,
   Menu,
 } from 'semantic-ui-react'
+import { AuthConsumer, } from '../../providers/AuthProvider'
+import { Link, withRouter, } from 'react-router-dom'
 
 const Navbar = () => (
+
   <div>
     <Menu fixed='top' inverted>
       <Container>
