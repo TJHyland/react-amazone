@@ -21,8 +21,8 @@ class Login extends React.Component {
 
     return (
       <Segment basic>
-        <Header as='h1' textAlign='center'>Login</Header>
-        <Form onSubmit={this.handleSubmit}>
+        <Header as='h1' textAlign='center' style={{padding: '30px 20px'}}>Login</Header>
+        <Form onSubmit={this.handleSubmit} >
           <Form.Input 
             label="Email"
             autoFocus
@@ -42,7 +42,9 @@ class Login extends React.Component {
             onChange={this.handleChange}
             />
           <Segment textAlign='center' basic>
-            <Button primary type='submit'>Login</Button>
+      
+            <Button primary type='submit'>Log In</Button>
+
           </Segment>
         </Form>
       </Segment>
