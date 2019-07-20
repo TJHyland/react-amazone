@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import DepartmentList from './DepartmentList';
+import DepartmentHero from '../hero/DepartmentHero'
 
 class DepartmentPage extends React.Component {
 
@@ -10,6 +11,7 @@ class DepartmentPage extends React.Component {
   setLoaded = () => {
     this.setState({ loaded: true })
   }
+
 
   componentDidMount(){
     axios.get(`/api/departments`)
@@ -29,6 +31,8 @@ class DepartmentPage extends React.Component {
     return (
       <>
         <Link to={{pathname: '/'}}>Home</Link>
+
+        <DepartmentHero />
         
         <h1>All Departments</h1>
         <ul>
