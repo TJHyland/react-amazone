@@ -43,8 +43,8 @@ const Navbar = () => (
               id='login'
               name='login'
               active={location.pathname === '/login'}
-            />
-          </Link> */}
+            /> */}
+          {/* </Link> */}
         </Menu.Menu>
       </Container>
     </Menu>
