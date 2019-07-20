@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import {
   Container,
   Dropdown,
-  Image,
+  Item,
   Menu,
 } from 'semantic-ui-react'
 import { AuthConsumer, } from '../../providers/AuthProvider'
@@ -18,11 +19,11 @@ const Navbar = () => (
         }}>
           AMAZONE
         </Menu.Item>
-        <Menu.Item as='a'>Home</Menu.Item>
+        <Menu.Item as={ Link } name='home' to='/'>Home</Menu.Item>
 
         <Dropdown item simple text='Dropdown'>
           <Dropdown.Menu>
-            <Dropdown.Item>Departments</Dropdown.Item>
+            <Dropdown.Item>Department</Dropdown.Item>
             <Dropdown.Item>CRUD</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Header>Header Item</Dropdown.Header>
@@ -37,15 +38,11 @@ const Navbar = () => (
             <Dropdown.Item>List Item</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <Menu.Menu position='right'>
-        {/* <Link to='/login'>
-            <Menu.Item
-              id='login'
-              name='login'
-              active={location.pathname === '/login'}
-            />
-          </Link> */}
-        </Menu.Menu>
+        <Menu.Item position='right' as={ Link } name='login' to='/login'>
+          Login/Logout
+        </Menu.Item>
+
+        
       </Container>
     </Menu>
   </div>
