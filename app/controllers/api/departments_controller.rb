@@ -36,4 +36,5 @@ class Api::DepartmentsController < ApplicationController
 
   def department_params
     params.require(:department).permit(:title)
+  end
 end
