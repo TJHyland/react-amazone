@@ -20,8 +20,8 @@ departments = [1,2,3,4,5,6,7,8,9,10]
     product = Product.create(
       name: Faker::Food.fruits,
       description: Faker::Food.description,
-      price: Faker::Number.digit,
-      stock: Faker::Number.digit,
+      price: (Faker::Number.digit.to_i + 1),
+      stock: (Faker::Number.digit.to_i + 1),
       department_id: departments.sample
     )
 
