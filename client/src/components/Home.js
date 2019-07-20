@@ -13,7 +13,7 @@ class Home extends Component {
         <li>Departments</li>
         <li>Users?</li>
       </ul>
-      <Link to={{pathname: '/DepartmentsPage', state: {} }}>Departments</Link>
+      <Link to={{pathname: '/DepartmentsPage' }}>Departments</Link>
       </>
     )
   }
