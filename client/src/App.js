@@ -11,6 +11,8 @@ import Footer from './components/shared/Footer';
 import DepartmentsPage from './components/department/DepartmentsPage';
 import DepartmentShow from './components/department/DepartmentShow';
 import ProductShow from './components/product/ProductShow';
+import DepartmentForm from './components/department/DepartmentForm';
+import ProductForm from './components/product/ProductForm';
 
 const App = () => (
   <Fragment>
@@ -18,15 +20,15 @@ const App = () => (
   <div>
     <FetchUser>
       <Switch>
-       <ProtectedRoute exact path="/" component={Home} />
-       <Route exact path='/login' component={Login} />
-       <Route exact path='/register' component={Register} />
-       <Route component={NoMatch} />
-
-    <Route exact path="/DepartmentsPage" component={DepartmentsPage} />
-    <Route exact path="/Department/:id" component={DepartmentShow} />
-    <Route exact path="/Product/:id" component={ProductShow} />
-
+        <ProtectedRoute exact path="/" component={Home} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/DepartmentForm' component={DepartmentForm} />
+        <Route exact path='/ProductForm' component={ProductForm} />
+        <Route exact path='/register' component={Register} />
+        <Route exact path="/DepartmentsPage" component={DepartmentsPage} />
+        <Route exact path="/Department/:id" component={DepartmentShow} />
+        <Route exact path="/Product/:id" component={ProductShow} />
+        <Route component={NoMatch} />
      </Switch>
     </FetchUser>
 
